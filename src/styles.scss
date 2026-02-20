@@ -1,0 +1,53 @@
+
+// Include theming for Angular Material with `mat.theme()`.
+@use '@angular/material' as mat;
+
+html {
+  height: 100%;
+  @include mat.theme((
+    color: (
+      primary: mat.$cyan-palette,
+      tertiary: mat.$orange-palette,
+    ),
+    typography: Roboto,
+    density: 0,
+  ));
+}
+
+body {
+  color-scheme: light;
+  background-color: var(--mat-sys-surface);
+  color: var(--mat-sys-on-surface);
+  font: var(--mat-sys-body-medium);
+  margin: 0;
+  height: 100%;
+  font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Tablet-optimized global styles
+* {
+  box-sizing: border-box;
+}
+
+// Ensure touch targets are large enough
+button, a, [role="button"] {
+  min-height: 48px;
+  min-width: 48px;
+}
+
+mat-form-field {
+  font-size: 1rem;
+}
+
+// Snackbar styles
+.snack-success {
+  --mdc-snackbar-container-color: var(--mat-sys-primary-container);
+  --mdc-snackbar-supporting-text-color: var(--mat-sys-on-primary-container);
+}
+
+.snack-error {
+  --mdc-snackbar-container-color: var(--mat-sys-error-container);
+  --mdc-snackbar-supporting-text-color: var(--mat-sys-on-error-container);
+}
