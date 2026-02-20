@@ -129,7 +129,10 @@ export class LoginComponent {
     if (result.success) {
       const user = this.auth.currentUser();
       if (user) {
-        await this.libraries.seedDefaultLibrary(user.id);
+        await this.libraries.seedDefaultLibrary(user.id).catch((e) => {
+          console.error('Failed to seed default library', e);
+          this.error.set('Kon standaard woordenbibliotheek niet laden');
+        });
       }
       this.router.navigate(['/dashboard']);
     } else {
