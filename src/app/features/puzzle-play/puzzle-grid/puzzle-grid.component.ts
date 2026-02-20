@@ -61,13 +61,13 @@ const WORD_COLORS = [
       background: var(--mat-sys-outline-variant);
       border-radius: 8px;
       overflow: hidden;
-      max-width: min(100%, 90vh);
-      max-height: min(100%, 90vh);
+      max-width: min(100%, 80vh);
+      max-height: min(100%, 80vh);
       width: 100%;
       aspect-ratio: 1;
       border: 1px solid black;
       padding: 8px;
-      margin: 16px;
+      margin: 8px;
       box-sizing: border-box;
     }
     .cell {
