@@ -12,6 +12,7 @@ const SALT_ROUNDS = 12;
 @Injectable({ providedIn: 'root' })
 export class AuthService {
   private readonly tokenPayload = signal<AuthToken | null>(null);
+  readonly initialized: Promise<void>;
 
   readonly currentUser = computed(() => {
     const payload = this.tokenPayload();
@@ -24,7 +25,7 @@ export class AuthService {
     private db: DatabaseService,
     private router: Router,
   ) {
-    this.loadTokenFromStorage();
+    this.initialized = this.loadTokenFromStorage();
   }
 
   async register(username: string, password: string): Promise<{ success: boolean; error?: string }> {

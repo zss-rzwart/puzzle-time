@@ -54,8 +54,9 @@ export class LibraryService {
 
   async seedDefaultLibrary(userId: number): Promise<void> {
     const existing = await this.db.libraries
-      .where('[userId+isDefault]')
-      .equals([userId, 1])
+      .where('userId')
+      .equals(userId)
+      .filter((lib) => lib.isDefault)
       .first();
     if (existing) return;
 
