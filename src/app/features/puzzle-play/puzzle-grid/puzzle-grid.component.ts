@@ -40,6 +40,11 @@ const WORD_COLORS = [
     </div>
   `,
   styles: `
+    :host {
+      display: flex;
+      width: 100%;
+      height: 100%;
+    }
     .grid-wrapper {
       width: 100%;
       height: 100%;
@@ -54,11 +59,16 @@ const WORD_COLORS = [
       display: grid;
       gap: 2px;
       background: var(--mat-sys-outline-variant);
-      border-radius: 12px;
+      border-radius: 8px;
       overflow: hidden;
-      max-width: min(100%, 80vh);
+      max-width: min(100%, 90vh);
+      max-height: min(100%, 90vh);
       width: 100%;
       aspect-ratio: 1;
+      border: 1px solid black;
+      padding: 8px;
+      margin: 16px;
+      box-sizing: border-box;
     }
     .cell {
       position: relative;
