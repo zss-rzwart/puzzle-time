@@ -76,12 +76,12 @@ import { CongratulationsComponent } from './congratulations/congratulations.comp
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
+      height: calc(100vh - var(--navbar-height));
       gap: 24px;
       p { font-size: 1.2rem; }
     }
     .play-layout {
-      height: 100vh;
+      height: calc(100vh - var(--navbar-height));
       display: flex;
       flex-direction: column;
     }

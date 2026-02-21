@@ -4,6 +4,7 @@
 
 html {
   height: 100%;
+  --navbar-height: 64px;
   @include mat.theme((
     color: (
       primary: mat.$cyan-palette,
@@ -24,6 +25,7 @@ body {
   font-size: 18px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 // Tablet-optimized global styles
