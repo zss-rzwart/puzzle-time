@@ -35,6 +35,7 @@
               }
             ],
             "styles": [
+              "node_modules/material-icons/iconfont/material-icons.css",
               "src/styles.scss"
             ]
           },
@@ -53,7 +54,12 @@
                 }
               ],
               "outputHashing": "all",
-              "serviceWorker": "ngsw-config.json"
+              "serviceWorker": "ngsw-config.json",
+              "optimization": {
+                "fonts": {
+                  "inline": false
+                }
+              }
             },
             "development": {
               "optimization": false,
