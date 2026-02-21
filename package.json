@@ -37,6 +37,7 @@
     "canvas-confetti": "^1.9.4",
     "dexie": "^4.3.0",
     "jose": "^6.1.3",
+    "material-icons": "^1.13.14",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },
