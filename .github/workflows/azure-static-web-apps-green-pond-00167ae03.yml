@@ -4,11 +4,38 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches:
+      - main
 
 jobs:
-  build_and_deploy_job:
+  validate:
     runs-on: ubuntu-latest
-    name: Build and Deploy Job
+    name: Build and Test
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: true
+          lfs: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci
+      - name: Build
+        run: npx ng build
+      - name: Test
+        run: npx ng test
+
+  deploy:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: validate
+    runs-on: ubuntu-latest
+    name: Deploy Job
     permissions:
        id-token: write
        contents: read
