@@ -113,9 +113,14 @@ import { CongratulationsComponent } from './congratulations/congratulations.comp
       max-width: 360px;
       overflow-y: auto;
     }
-    @media (max-width: 768px) {
-      .game-area { flex-direction: column; }
-      .word-panel { max-width: 100%; min-width: 0; max-height: 200px; }
+    @media (max-width: 768px) and (orientation: portrait) {
+      .game-area { flex-direction: column; overflow-y: auto; padding: 8px; gap: 8px; }
+      .grid-panel { flex: 0 0 auto; height: calc(100vw - 16px); /* 16px = 2 × 8px .game-area padding */ }
+      .word-panel { max-width: 100%; min-width: 0; flex: 0 0 auto; overflow-y: auto; }
+    }
+    @media (max-width: 768px) and (orientation: landscape) {
+      .game-area { flex-direction: row; }
+      .word-panel { max-width: 50%; min-width: 0; overflow-y: auto; }
     }
   `,
 })
