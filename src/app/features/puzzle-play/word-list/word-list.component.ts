@@ -57,7 +57,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
       letter-spacing: 0.5px;
     }
     @media (max-width: 768px) and (orientation: portrait) {
-      .word-list-panel { padding: 8px; }
+      .word-list-panel { padding: 8px; height: auto; }
       .progress-header { margin-bottom: 8px; span { font-size: 0.95rem; } }
       mat-list { display: grid; grid-template-columns: 1fr 1fr; }
       mat-list-item { font-size: 0.9rem; }
