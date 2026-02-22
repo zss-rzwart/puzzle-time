@@ -56,10 +56,15 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
       font-weight: 500;
       letter-spacing: 0.5px;
     }
-    @media (max-width: 768px) {
+    @media (max-width: 768px) and (orientation: portrait) {
       .word-list-panel { padding: 8px; }
       .progress-header { margin-bottom: 8px; span { font-size: 0.95rem; } }
       mat-list { display: grid; grid-template-columns: 1fr 1fr; }
+      mat-list-item { font-size: 0.9rem; }
+    }
+    @media (max-width: 768px) and (orientation: landscape) {
+      .word-list-panel { padding: 8px; }
+      .progress-header { margin-bottom: 8px; span { font-size: 0.95rem; } }
       mat-list-item { font-size: 0.9rem; }
     }
   `,
