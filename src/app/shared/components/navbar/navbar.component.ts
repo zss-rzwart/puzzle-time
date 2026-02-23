@@ -19,7 +19,7 @@ import { AuthService } from '../../../core/auth/auth.service';
       <span class="spacer"></span>
 
       @if (isAuthenticated()) {
-        <nav class="nav-links">
+        <nav class="nav-links desktop-nav">
           <a mat-button routerLink="/dashboard" routerLinkActive="active">
             <mat-icon>dashboard</mat-icon> Dashboard
           </a>
@@ -30,6 +30,21 @@ import { AuthService } from '../../../core/auth/auth.service';
             <mat-icon>view_module</mat-icon> Puzzels
           </a>
         </nav>
+
+        <button mat-icon-button class="hamburger-btn" [matMenuTriggerFor]="mobileMenu" aria-label="Menu">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <mat-menu #mobileMenu="matMenu">
+          <a mat-menu-item routerLink="/dashboard">
+            <mat-icon>dashboard</mat-icon> Dashboard
+          </a>
+          <a mat-menu-item routerLink="/libraries">
+            <mat-icon>library_books</mat-icon> Bibliotheken
+          </a>
+          <a mat-menu-item routerLink="/puzzle/definitions">
+            <mat-icon>view_module</mat-icon> Puzzels
+          </a>
+        </mat-menu>
 
         <button mat-icon-button [matMenuTriggerFor]="userMenu">
           <mat-icon>account_circle</mat-icon>
@@ -61,6 +76,11 @@ import { AuthService } from '../../../core/auth/auth.service';
       gap: 4px;
       a.active { opacity: 1; }
       a:not(.active) { opacity: 0.8; }
+    }
+    .hamburger-btn { display: none; }
+    @media (max-width: 768px) {
+      .desktop-nav { display: none; }
+      .hamburger-btn { display: inline-flex; }
     }
     .menu-header {
       padding: 8px 16px;
