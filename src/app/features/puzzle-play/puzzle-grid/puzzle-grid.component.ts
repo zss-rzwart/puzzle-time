@@ -61,9 +61,9 @@ const WORD_COLORS = [
       background: var(--mat-sys-outline-variant);
       border-radius: 8px;
       overflow: hidden;
-      max-width: min(100%, 80vh);
-      max-height: min(100%, 80vh);
-      width: 100%;
+      max-width: calc(100% - 16px);
+      max-height: calc(100% - 16px);
+      height: calc(100% - 16px);
       aspect-ratio: 1;
       border: 1px solid black;
       padding: 8px;
