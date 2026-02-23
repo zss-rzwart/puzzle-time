@@ -90,7 +90,7 @@ import { LibraryService } from '../../../core/services/library.service';
       justify-content: center;
       min-height: 100vh;
       padding: 24px;
-      background: var(--mat-sys-surface-container-low);
+      background: linear-gradient(135deg, var(--mat-sys-primary-container) 0%, var(--mat-sys-tertiary-container) 100%);
     }
     .auth-card {
       width: 100%;

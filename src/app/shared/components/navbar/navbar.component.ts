@@ -10,7 +10,7 @@ import { AuthService } from '../../../core/auth/auth.service';
   selector: 'app-navbar',
   imports: [MatToolbarModule, MatButtonModule, MatIconModule, MatMenuModule, RouterLink, RouterLinkActive],
   template: `
-    <mat-toolbar color="primary" class="navbar">
+    <mat-toolbar class="navbar">
       <button mat-icon-button routerLink="/dashboard">
         <mat-icon>extension</mat-icon>
       </button>
@@ -63,17 +63,24 @@ import { AuthService } from '../../../core/auth/auth.service';
       position: sticky;
       top: 0;
       z-index: 100;
+      background: linear-gradient(135deg, var(--mat-sys-primary) 0%, var(--mat-sys-tertiary) 100%);
+      color: var(--mat-sys-on-primary);
+      --mat-icon-button-state-layer-color: var(--mat-sys-on-primary);
+      --mat-text-button-state-layer-color: var(--mat-sys-on-primary);
     }
     .brand {
       font-size: 1.3rem;
-      font-weight: 600;
+      font-weight: 700;
       cursor: pointer;
       margin-left: 8px;
+      color: var(--mat-sys-on-primary);
+      letter-spacing: 0.5px;
     }
     .spacer { flex: 1; }
     .nav-links {
       display: flex;
       gap: 4px;
+      a { color: var(--mat-sys-on-primary); }
       a.active { opacity: 1; }
       a:not(.active) { opacity: 0.8; }
     }

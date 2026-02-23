@@ -14,17 +14,23 @@ import type { PuzzleDefinition } from '../../core/database/database.models';
     <div class="dashboard">
       <div class="quick-actions">
         <mat-card class="action-card" routerLink="/puzzle/new">
-          <mat-icon class="action-icon">add_circle</mat-icon>
+          <div class="action-icon-wrapper">
+            <mat-icon class="action-icon">add_circle</mat-icon>
+          </div>
           <span class="action-label">Nieuwe Puzzel</span>
         </mat-card>
 
         <mat-card class="action-card" routerLink="/libraries">
-          <mat-icon class="action-icon">library_books</mat-icon>
+          <div class="action-icon-wrapper secondary">
+            <mat-icon class="action-icon">library_books</mat-icon>
+          </div>
           <span class="action-label">Bibliotheken</span>
         </mat-card>
 
         <mat-card class="action-card" routerLink="/puzzle/definitions">
-          <mat-icon class="action-icon">view_module</mat-icon>
+          <div class="action-icon-wrapper tertiary">
+            <mat-icon class="action-icon">view_module</mat-icon>
+          </div>
           <span class="action-label">Opgeslagen Puzzels</span>
         </mat-card>
       </div>
@@ -90,12 +96,24 @@ import type { PuzzleDefinition } from '../../core/database/database.models';
       align-items: center;
       &:hover { transform: translateY(-4px); }
     }
+    .action-icon-wrapper {
+      width: 72px;
+      height: 72px;
+      border-radius: 20px;
+      background: var(--mat-sys-primary-container);
+      color: var(--mat-sys-on-primary-container);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+      &.secondary { background: var(--mat-sys-secondary-container); color: var(--mat-sys-on-secondary-container); }
+      &.tertiary { background: var(--mat-sys-tertiary-container); color: var(--mat-sys-on-tertiary-container); }
+    }
     .action-icon {
-      font-size: 48px;
-      width: 48px;
-      height: 48px;
-      color: var(--mat-sys-primary);
-      margin-bottom: 8px;
+      font-size: 36px;
+      width: 36px;
+      height: 36px;
+      color: inherit;
     }
     .action-label {
       font-size: 1rem;
@@ -124,11 +142,16 @@ import type { PuzzleDefinition } from '../../core/database/database.models';
       .action-card {
         padding: 8px;
       }
+      .action-icon-wrapper {
+        width: 52px;
+        height: 52px;
+        border-radius: 14px;
+        margin-bottom: 6px;
+      }
       .action-icon {
-        font-size: 32px;
-        width: 32px;
-        height: 32px;
-        margin-bottom: 4px;
+        font-size: 28px;
+        width: 28px;
+        height: 28px;
       }
       .action-label {
         font-size: 0.75rem;
