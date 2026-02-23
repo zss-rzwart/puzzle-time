@@ -12,8 +12,16 @@ import { NavbarComponent } from './shared/components/navbar/navbar.component';
     </main>
   `,
   styles: `
+    :host {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
     main {
-      min-height: calc(100vh - var(--navbar-height));
+      flex: 1;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
     }
   `,
 })
