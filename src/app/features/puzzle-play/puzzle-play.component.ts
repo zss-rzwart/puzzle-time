@@ -29,9 +29,6 @@ import { CongratulationsComponent } from './congratulations/congratulations.comp
       @case ('playing') {
         <div class="play-layout">
           <mat-toolbar class="play-toolbar">
-            <button mat-icon-button (click)="goBack()">
-              <mat-icon>arrow_back</mat-icon>
-            </button>
             <span>{{ puzzleName() }}</span>
             <span class="spacer"></span>
             <span class="timer">{{ formattedTime() }}</span>
@@ -76,12 +73,12 @@ import { CongratulationsComponent } from './congratulations/congratulations.comp
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: calc(100vh - var(--navbar-height));
+      height: calc(100dvh - var(--navbar-height) - env(safe-area-inset-bottom));
       gap: 24px;
       p { font-size: 1.2rem; }
     }
     .play-layout {
-      height: calc(100vh - var(--navbar-height));
+      height: calc(100dvh - var(--navbar-height) - env(safe-area-inset-bottom));
       display: flex;
       flex-direction: column;
     }
@@ -206,11 +203,6 @@ export class PuzzlePlayComponent implements OnInit {
   async regenerate(): Promise<void> {
     this.stopTimer();
     await this.generate();
-  }
-
-  goBack(): void {
-    this.stopTimer();
-    this.router.navigate(['/puzzle/definitions']);
   }
 
   private startTimer(): void {
