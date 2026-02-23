@@ -63,7 +63,7 @@ const WORD_COLORS = [
       overflow: hidden;
       max-width: calc(100% - 16px);
       max-height: calc(100% - 16px);
-      width: 100%;
+      height: calc(100% - 16px);
       aspect-ratio: 1;
       border: 1px solid black;
       padding: 8px;
