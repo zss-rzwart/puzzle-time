@@ -63,9 +63,9 @@ import type { PuzzleDefinition } from '../../core/database/database.models';
       overflow: hidden;
     }
     .dashboard {
+      flex: 1;
       display: flex;
       flex-direction: column;
-      height: 100%;
       overflow: hidden;
       padding: 24px;
       max-width: 1200px;
