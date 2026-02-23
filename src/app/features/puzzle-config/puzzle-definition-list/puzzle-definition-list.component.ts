@@ -16,7 +16,12 @@ import type { PuzzleDefinition } from '../../../core/database/database.models';
   template: `
     <div class="def-list-page">
       <div class="page-header">
-        <h1>Opgeslagen Puzzels</h1>
+        <div class="header-title">
+          <a mat-icon-button routerLink="/dashboard" aria-label="Terug naar dashboard">
+            <mat-icon>arrow_back</mat-icon>
+          </a>
+          <h1>Opgeslagen Puzzels</h1>
+        </div>
         <a mat-fab extended routerLink="/puzzle/new">
           <mat-icon>add</mat-icon> Nieuwe Puzzel
         </a>
@@ -74,6 +79,11 @@ import type { PuzzleDefinition } from '../../../core/database/database.models';
       justify-content: space-between;
       margin-bottom: 24px;
       h1 { font-size: 2rem; margin: 0; }
+    }
+    .header-title {
+      display: flex;
+      align-items: center;
+      gap: 4px;
     }
     .def-grid {
       display: grid;

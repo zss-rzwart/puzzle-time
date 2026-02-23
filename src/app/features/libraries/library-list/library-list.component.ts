@@ -19,7 +19,12 @@ import { LibraryCreateDialogComponent } from './library-create-dialog.component'
   template: `
     <div class="library-list-page">
       <div class="page-header">
-        <h1>Woordbibliotheken</h1>
+        <div class="header-title">
+          <a mat-icon-button routerLink="/dashboard" aria-label="Terug naar dashboard">
+            <mat-icon>arrow_back</mat-icon>
+          </a>
+          <h1>Woordbibliotheken</h1>
+        </div>
         <button mat-fab extended (click)="openCreateDialog()">
           <mat-icon>add</mat-icon> Nieuwe Bibliotheek
         </button>
@@ -79,6 +84,11 @@ import { LibraryCreateDialogComponent } from './library-create-dialog.component'
       justify-content: space-between;
       margin-bottom: 24px;
       h1 { font-size: 2rem; margin: 0; }
+    }
+    .header-title {
+      display: flex;
+      align-items: center;
+      gap: 4px;
     }
     .library-grid {
       display: grid;
