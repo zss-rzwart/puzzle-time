@@ -18,10 +18,7 @@ import { NavbarComponent } from './shared/components/navbar/navbar.component';
       height: 100vh;
     }
     main {
-      flex: 1;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
+      flex: 1 0 auto;
     }
   `,
 })
