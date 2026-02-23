@@ -119,6 +119,7 @@ import type { PuzzleDefinition } from '../../core/database/database.models';
       }
       .quick-actions {
         gap: 4px;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
       }
       .action-card {
         padding: 8px;
