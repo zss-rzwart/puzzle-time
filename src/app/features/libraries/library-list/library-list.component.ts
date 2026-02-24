@@ -83,12 +83,6 @@ import { LibraryCreateDialogComponent } from './library-create-dialog.component'
       margin-bottom: 24px;
       h1 { font-size: 2rem; margin: 0; }
     }
-    .fab-add {
-      position: fixed;
-      bottom: calc(24px + env(safe-area-inset-bottom));
-      right: 24px;
-      z-index: 100;
-    }
     .header-title {
       display: flex;
       align-items: center;
