@@ -22,10 +22,10 @@ import type { PuzzleDefinition } from '../../../core/database/database.models';
           </a>
           <h1>Opgeslagen Puzzels</h1>
         </div>
-        <a mat-fab extended routerLink="/puzzle/new">
-          <mat-icon>add</mat-icon> Nieuwe Puzzel
-        </a>
       </div>
+      <a mat-fab class="fab-add" routerLink="/puzzle/new" aria-label="Nieuwe puzzel aanmaken">
+        <mat-icon>add</mat-icon>
+      </a>
 
       @if (definitions().length === 0) {
         <div class="empty-state">
@@ -76,9 +76,14 @@ import type { PuzzleDefinition } from '../../../core/database/database.models';
     .page-header {
       display: flex;
       align-items: center;
-      justify-content: space-between;
       margin-bottom: 24px;
       h1 { font-size: 2rem; margin: 0; }
+    }
+    .fab-add {
+      position: fixed;
+      bottom: calc(24px + env(safe-area-inset-bottom));
+      right: 24px;
+      z-index: 100;
     }
     .header-title {
       display: flex;
