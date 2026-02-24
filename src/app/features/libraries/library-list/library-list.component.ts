@@ -5,7 +5,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatDialog } from '@angular/material/dialog';
-import { MatFabButton } from '@angular/material/button';
 import { AuthService } from '../../../core/auth/auth.service';
 import { LibraryService } from '../../../core/services/library.service';
 import { NotificationService } from '../../../core/services/notification.service';
@@ -25,10 +24,10 @@ import { LibraryCreateDialogComponent } from './library-create-dialog.component'
           </a>
           <h1>Woordbibliotheken</h1>
         </div>
-        <button mat-fab extended (click)="openCreateDialog()">
-          <mat-icon>add</mat-icon> Nieuwe Bibliotheek
-        </button>
       </div>
+      <button mat-fab class="fab-add" (click)="openCreateDialog()" aria-label="Nieuwe bibliotheek aanmaken">
+        <mat-icon>add</mat-icon>
+      </button>
 
       @if (libraries().length === 0) {
         <div class="empty-state">
@@ -75,13 +74,13 @@ import { LibraryCreateDialogComponent } from './library-create-dialog.component'
   styles: `
     .library-list-page {
       padding: 24px;
+      padding-bottom: calc(96px + env(safe-area-inset-bottom));
       max-width: 1200px;
       margin: 0 auto;
     }
     .page-header {
       display: flex;
       align-items: center;
-      justify-content: space-between;
       margin-bottom: 24px;
       h1 { font-size: 2rem; margin: 0; }
     }
