@@ -70,6 +70,7 @@ import type { PuzzleDefinition } from '../../../core/database/database.models';
   styles: `
     .def-list-page {
       padding: 24px;
+      padding-bottom: calc(96px + env(safe-area-inset-bottom));
       max-width: 1200px;
       margin: 0 auto;
     }
@@ -78,12 +79,6 @@ import type { PuzzleDefinition } from '../../../core/database/database.models';
       align-items: center;
       margin-bottom: 24px;
       h1 { font-size: 2rem; margin: 0; }
-    }
-    .fab-add {
-      position: fixed;
-      bottom: calc(24px + env(safe-area-inset-bottom));
-      right: 24px;
-      z-index: 100;
     }
     .header-title {
       display: flex;

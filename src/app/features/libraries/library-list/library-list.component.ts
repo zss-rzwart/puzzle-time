@@ -74,6 +74,7 @@ import { LibraryCreateDialogComponent } from './library-create-dialog.component'
   styles: `
     .library-list-page {
       padding: 24px;
+      padding-bottom: calc(96px + env(safe-area-inset-bottom));
       max-width: 1200px;
       margin: 0 auto;
     }

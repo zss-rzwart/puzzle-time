@@ -53,3 +53,11 @@ mat-form-field {
   --mdc-snackbar-container-color: var(--mat-sys-error-container);
   --mdc-snackbar-supporting-text-color: var(--mat-sys-on-error-container);
 }
+
+// Fixed FAB (floating action button) always visible at bottom-right
+.fab-add {
+  position: fixed;
+  bottom: calc(24px + env(safe-area-inset-bottom));
+  right: 24px;
+  z-index: 100;
+}
